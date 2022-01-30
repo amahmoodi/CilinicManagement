@@ -8,6 +8,11 @@ namespace CilinicManagment.Controllers
 {
     public class AdminController : Controller
     {
+        public ActionResult Admin()
+        {
+            return View();
+        }
+
         // GET: Admin
         public ActionResult Index()
         {

@@ -6,57 +6,93 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/navbar.css" rel="stylesheet">
+    <link href="~/Content/headers.css" rel="stylesheet" />
+    @*<link href="~/Content/signin.css" rel="stylesheet" />*@
+    <style>
+        a.my-class {
+            color: #ff0000
+        }
+
+            a.my-class:active {
+                color: #ff0000
+            }
+
+            a.my-class:link {
+                color: #ff0000
+            }
+
+            a.my-class:visited {
+                color: #ff0000
+            }
+
+        ul.navbar-nav a {
+            color: #ffffff;
+        }
+    </style>
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">کلینیک مهران   @Html.ActionLink("کلینیک مهران", "Index", "Home");</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+    @*<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">کلینیک مهران   @Html.ActionLink(" ", "Index", "Home", new { @class = "my-class" })</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+        </nav>*@
+
+
+
+    <nav class="navbar navbar-expand navbar-dark bg-primary" aria-label="Fifth navbar example">
+        <div class="container-lg">
+            <a class="navbar-brand" href="#">کلینیک مهران</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarColor02">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">
-                            Home
-                            <span class="visually-hidden">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        @Html.ActionLink("Cover", "Cover", "Home")
-                    </li>
-                    <li class="nav-item">
-                        @Html.ActionLink("مدیرسیستم", "Doctor", "Admin")
-                    </li>
-                    <li class="nav-item">
-                     @Html.ActionLink("مدیرسیستم","Index","Admin")
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Separated link</a>
-                        </div>
-                    </li>
+            <div class="collapse navbar-collapse" id="navbarsExample05">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    @*<li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdown05">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>*@
                 </ul>
-                @*<form class="d-flex">
-                        <input class="form-control me-sm-2" type="text" placeholder="Search">
-                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                @*<form>
+                        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
                     </form>*@
+                @Html.Partial("_LoginPartial")
             </div>
         </div>
     </nav>
 
-    <div class="container-xxl body-content">
+
+    <div class="container-lg body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>آدرس : تهران سه راه افسریه</p>
         </footer>
     </div>
 

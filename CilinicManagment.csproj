@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CilinicManagment</RootNamespace>
     <AssemblyName>CilinicManagment</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -69,17 +70,15 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
@@ -120,6 +119,7 @@
       <Private>True</Private>
       <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -182,6 +182,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -194,6 +195,79 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bootstrap-5.0.2-examples\album-rtl\index.html" />
+    <Content Include="bootstrap-5.0.2-examples\album\index.html" />
+    <Content Include="bootstrap-5.0.2-examples\assets\brand\bootstrap-logo-white.svg" />
+    <Content Include="bootstrap-5.0.2-examples\assets\brand\bootstrap-logo.svg" />
+    <Content Include="bootstrap-5.0.2-examples\assets\dist\css\bootstrap.min.css" />
+    <Content Include="bootstrap-5.0.2-examples\assets\dist\css\bootstrap.rtl.min.css" />
+    <Content Include="bootstrap-5.0.2-examples\assets\dist\js\bootstrap.bundle.min.js" />
+    <Content Include="bootstrap-5.0.2-examples\blog-rtl\index.html" />
+    <Content Include="bootstrap-5.0.2-examples\blog\blog.css" />
+    <Content Include="bootstrap-5.0.2-examples\blog\blog.rtl.css" />
+    <Content Include="bootstrap-5.0.2-examples\blog\index.html" />
+    <Content Include="bootstrap-5.0.2-examples\carousel-rtl\index.html" />
+    <Content Include="bootstrap-5.0.2-examples\carousel\carousel.css" />
+    <Content Include="bootstrap-5.0.2-examples\carousel\carousel.rtl.css" />
+    <Content Include="bootstrap-5.0.2-examples\carousel\index.html" />
+    <Content Include="bootstrap-5.0.2-examples\cheatsheet-rtl\index.html" />
+    <Content Include="bootstrap-5.0.2-examples\cheatsheet\cheatsheet.css" />
+    <Content Include="bootstrap-5.0.2-examples\cheatsheet\cheatsheet.js" />
+    <Content Include="bootstrap-5.0.2-examples\cheatsheet\cheatsheet.rtl.css" />
+    <Content Include="bootstrap-5.0.2-examples\cheatsheet\index.html" />
+    <Content Include="bootstrap-5.0.2-examples\checkout-rtl\index.html" />
+    <Content Include="bootstrap-5.0.2-examples\checkout\form-validation.css" />
+    <Content Include="bootstrap-5.0.2-examples\checkout\form-validation.js" />
+    <Content Include="bootstrap-5.0.2-examples\checkout\index.html" />
+    <Content Include="bootstrap-5.0.2-examples\cover\cover.css" />
+    <Content Include="bootstrap-5.0.2-examples\cover\index.html" />
+    <Content Include="bootstrap-5.0.2-examples\dashboard-rtl\dashboard.js" />
+    <Content Include="bootstrap-5.0.2-examples\dashboard-rtl\index.html" />
+    <Content Include="bootstrap-5.0.2-examples\dashboard\dashboard.css" />
+    <Content Include="bootstrap-5.0.2-examples\dashboard\dashboard.js" />
+    <Content Include="bootstrap-5.0.2-examples\dashboard\dashboard.rtl.css" />
+    <Content Include="bootstrap-5.0.2-examples\dashboard\index.html" />
+    <Content Include="bootstrap-5.0.2-examples\features\features.css" />
+    <Content Include="bootstrap-5.0.2-examples\features\index.html" />
+    <Content Include="bootstrap-5.0.2-examples\features\unsplash-photo-1.jpg" />
+    <Content Include="bootstrap-5.0.2-examples\features\unsplash-photo-2.jpg" />
+    <Content Include="bootstrap-5.0.2-examples\features\unsplash-photo-3.jpg" />
+    <Content Include="bootstrap-5.0.2-examples\grid\grid.css" />
+    <Content Include="bootstrap-5.0.2-examples\grid\index.html" />
+    <Content Include="bootstrap-5.0.2-examples\headers\headers.css" />
+    <Content Include="bootstrap-5.0.2-examples\headers\index.html" />
+    <Content Include="bootstrap-5.0.2-examples\heroes\bootstrap-docs.png" />
+    <Content Include="bootstrap-5.0.2-examples\heroes\bootstrap-themes.png" />
+    <Content Include="bootstrap-5.0.2-examples\heroes\heroes.css" />
+    <Content Include="bootstrap-5.0.2-examples\heroes\index.html" />
+    <Content Include="bootstrap-5.0.2-examples\jumbotron\index.html" />
+    <Content Include="bootstrap-5.0.2-examples\masonry\index.html" />
+    <Content Include="bootstrap-5.0.2-examples\navbar-bottom\index.html" />
+    <Content Include="bootstrap-5.0.2-examples\navbar-fixed\index.html" />
+    <Content Include="bootstrap-5.0.2-examples\navbar-fixed\navbar-top-fixed.css" />
+    <Content Include="bootstrap-5.0.2-examples\navbar-static\index.html" />
+    <Content Include="bootstrap-5.0.2-examples\navbar-static\navbar-top.css" />
+    <Content Include="bootstrap-5.0.2-examples\navbars\index.html" />
+    <Content Include="bootstrap-5.0.2-examples\navbars\navbar.css" />
+    <Content Include="bootstrap-5.0.2-examples\offcanvas-navbar\index.html" />
+    <Content Include="bootstrap-5.0.2-examples\offcanvas-navbar\offcanvas.css" />
+    <Content Include="bootstrap-5.0.2-examples\offcanvas-navbar\offcanvas.js" />
+    <Content Include="bootstrap-5.0.2-examples\offcanvas\index.html" />
+    <Content Include="bootstrap-5.0.2-examples\pricing\index.html" />
+    <Content Include="bootstrap-5.0.2-examples\pricing\pricing.css" />
+    <Content Include="bootstrap-5.0.2-examples\product\index.html" />
+    <Content Include="bootstrap-5.0.2-examples\product\product.css" />
+    <Content Include="bootstrap-5.0.2-examples\sidebars\index.html" />
+    <Content Include="bootstrap-5.0.2-examples\sidebars\sidebars.css" />
+    <Content Include="bootstrap-5.0.2-examples\sidebars\sidebars.js" />
+    <Content Include="bootstrap-5.0.2-examples\sign-in\index.html" />
+    <Content Include="bootstrap-5.0.2-examples\sign-in\signin.css" />
+    <Content Include="bootstrap-5.0.2-examples\starter-template\index.html" />
+    <Content Include="bootstrap-5.0.2-examples\starter-template\starter-template.css" />
+    <Content Include="bootstrap-5.0.2-examples\sticky-footer-navbar\index.html" />
+    <Content Include="bootstrap-5.0.2-examples\sticky-footer-navbar\sticky-footer-navbar.css" />
+    <Content Include="bootstrap-5.0.2-examples\sticky-footer\index.html" />
+    <Content Include="bootstrap-5.0.2-examples\sticky-footer\sticky-footer.css" />
     <Content Include="Content\-bootstrap.css" />
     <Content Include="Content\-bootstrap.min.css" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -212,11 +286,16 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\carousel.rtl.css" />
     <Content Include="Content\cover.css" />
+    <Content Include="Content\dashboard.rtl.css" />
     <Content Include="Content\headers.css" />
     <Content Include="Content\Img\24816.jpg" />
     <Content Include="Content\Img\front-view-assortment-medical-still-life-elements.jpg" />
     <Content Include="Content\Img\woman-working-as-doctor.jpg" />
+    <Content Include="Content\navbar.css" />
+    <Content Include="Content\sidebars.css" />
+    <Content Include="Content\signin.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -248,7 +327,11 @@
     <Content Include="Content\bootstrap-grid.rtl.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="bootstrap-5.0.2-examples\assets\dist\css\bootstrap.min.css.map" />
+    <Content Include="bootstrap-5.0.2-examples\assets\dist\css\bootstrap.rtl.min.css.map" />
+    <Content Include="bootstrap-5.0.2-examples\assets\dist\js\bootstrap.bundle.min.js.map" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
+    <Content Include="Scripts\dashboard.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
     <Content Include="Scripts\jquery-3.6.0.slim.js" />
@@ -261,6 +344,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\sidebars.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -296,6 +380,8 @@
     <Content Include="Views\Home\Cover.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\Doctor.cshtml" />
+    <Content Include="Views\Admin\Admin.cshtml" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
